@@ -24,7 +24,7 @@ pkgver() {
 build() {
   cd screenlocker
   
-  cmake -DCMAKE_INSTALL_PREFIX=/usr .
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DKDE4_KSCREENSAVER_PAM_SERVICE=system-login .
   make
 }
 
