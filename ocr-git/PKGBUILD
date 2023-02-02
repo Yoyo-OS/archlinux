@@ -1,0 +1,34 @@
+# Maintainer: Yoyo <admin@yzzi.icu>
+
+pkgname=yoyo-ocr-git
+_pkgname=yoyo-ocr
+pkgver=0.9
+pkgrel=1
+pkgdesc="Ocr tool for YoyoOS"
+arch=('x86_64')
+url="https://github.com/yoyo-os/ocr"
+license=('GPL')
+groups=('yoyo-yyds-git')
+depends=('yoyo-fishui-git' 'solid')
+makedepends=('extra-cmake-modules' 'ninja' 'qt5-tools' 'git')
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+source=("git+$url.git")
+sha512sums=('SKIP')
+
+pkgver() {
+  cd ocr
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  cd ocr
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .
+  make
+}
+
+package() {
+  cd ocr
+  make DESTDIR="$pkgdir" install
+}

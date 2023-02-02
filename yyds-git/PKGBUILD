@@ -1,0 +1,29 @@
+# Maintainer: Yoyo <admin@yzzi.icu>
+
+pkgname=yoyo-yyds-git
+pkgver=0.9
+pkgrel=1
+pkgdesc='Yoyo desktop environment meta package'
+arch=('x86_64')
+url='https://github.com/yoyo-os/yyds'
+license=('GPL')
+depends=(
+    'yoyo-fishui-git'
+    'yoyo-libyoyo-git'
+    'yoyo-calculator-git'
+    'yoyo-core-git'
+    'yoyo-dock-git'
+    'yoyo-filemanager-git'
+    'yoyo-icons-git'
+    'yoyo-kwin-plugins-git'
+    'yoyo-launcher-git'
+    'yoyo-qt-plugins-git'
+    'yoyo-screenlocker-git'
+    'yoyo-settings-git'
+    'yoyo-terminal-git'
+    'yoyo-wallpapers-git'
+    'yoyo-screenshot-git'
+    'yoyo-videoplayer-git'
+    'yoyo-gtk-themes-git'
+    'yoyo-cursor-themes-git'
+)

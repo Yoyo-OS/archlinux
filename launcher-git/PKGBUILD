@@ -1,0 +1,34 @@
+# Maintainer: Yoyo <admin@yzzi.icu>
+
+pkgname=yoyo-launcher-git
+_pkgname=yoyo-launcher
+pkgver=0.9
+pkgrel=1
+pkgdesc="YoyoOS's full-screen application launcher"
+arch=('x86_64')
+url="https://github.com/yoyo-os/launcher"
+license=('GPL')
+groups=('yoyo-yyds-git')
+depends=('yoyo-fishui-git' 'kwindowsystem' 'yoyo-libyoyo-git')
+makedepends=('extra-cmake-modules' 'ninja' 'qt5-tools' 'git')
+provides=("$_pkgname")
+conflicts=("$_pkgname" "deepin-kwin")
+source=("git+$url.git")
+sha512sums=('SKIP')
+
+pkgver() {
+  cd launcher
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  cd launcher
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .
+  make
+}
+
+package() {
+  cd launcher
+  make DESTDIR="$pkgdir" install
+}
