@@ -1,12 +1,12 @@
 # Maintainer: Yoyo <admin@yzzi.icu>
 
-pkgname=yoyo-fishui-git
-_pkgname=fishui
+pkgname=yoyo-youi-git
+_pkgname=youi
 pkgver=0.9
 pkgrel=1
 pkgdesc="GUI library based on QQC2 for YoyoOS applications"
 arch=('x86_64')
-url="https://github.com/yoyo-os/fishui"
+url="https://github.com/yoyo-os/youi"
 license=('GPL')
 depends=('kwindowsystem' 'qt5-declarative' 'qt5-graphicaleffects' 'qt5-quickcontrols2')
 makedepends=('git' 'extra-cmake-modules' 'ninja' 'qt5-tools')
