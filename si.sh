@@ -5,7 +5,7 @@ pkgs=('fishui-git' 'libyoyo-git' 'core-git' 'filemanager-git' 'desktop-git' 'kwi
 for i in "${pkgs[@]}"
 do
 	echo "\nInstall $i\n"
-    cd $SCRIPT_PATH/$pkgs[i]
+    cd "$SCRIPT_PATH/$pkgs[i]"
     makepkg -si
     cd ..
 done
